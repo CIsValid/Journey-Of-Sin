@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerXbox : MonoBehaviour
 {
 	public float walkSpeed = 2;
 	public float runSpeed = 6;
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 		Move(inputDir, running);
 
 
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetButton("Jump C"))
 		{
 			Jump();
 		}

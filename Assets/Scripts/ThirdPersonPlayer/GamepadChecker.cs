@@ -32,14 +32,17 @@ public class GamepadChecker : MonoBehaviour
         if (Xbox_One_Controller == 1)
         {
             this.gameObject.GetComponent<PlayerController>().enabled = false;
+            this.gameObject.GetComponent<PlayerControllerXbox>().enabled = true;
         }
         else if (PS4_Controller == 1)
         {
             this.gameObject.GetComponent<PlayerController>().enabled = false;
+            this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
         }
         else
         {
             this.gameObject.GetComponent<PlayerController>().enabled = true;
+            this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
         }
     }
 }
