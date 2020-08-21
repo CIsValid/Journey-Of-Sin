@@ -213,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 1223009538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.66, z: -1.5}
-  m_LocalScale: {x: 10, y: 0.3, z: 10}
+  m_LocalScale: {x: 20, y: 0.3, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -346,11 +346,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockCursor: 0
-  mouseSensitivity: 10
+  mouseSensitivity: 1
   target: {fileID: 2073774137}
   dstFromTarget: 5
   pitchMinMax: {x: -40, y: 85}
   rotationSmoothTime: 0.12
+  controller: 1
 --- !u!1 &1528319386
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,13 +622,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e9e1d24f2a85940ad9e7bf6aec5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
+  walkSpeed: 10
   runSpeed: 8
   gravity: -12
   jumpHeight: 1
   airControlPercent: 1
   turnSmoothTime: 0.2
   speedSmoothTime: 0.1
+  xBoxController: 1
 --- !u!143 &2073774139
 CharacterController:
   m_ObjectHideFlags: 0

@@ -18,6 +18,8 @@ public class CameraController : MonoBehaviour
 	float yaw;
 	float pitch;
 
+	public bool controller;
+
 	void Start()
 	{
 		if (lockCursor)
@@ -29,14 +31,28 @@ public class CameraController : MonoBehaviour
 
 	void LateUpdate()
 	{
-		yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
-		pitch -= Input.GetAxis("Mouse Y") * mouseSensitivity;
-		pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
+		if(!controller)
+        {
+			yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
+			pitch -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+			pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
 
-		currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
-		transform.eulerAngles = currentRotation;
+			currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
+			transform.eulerAngles = currentRotation;
 
-		transform.position = target.position - transform.forward * dstFromTarget;
+			transform.position = target.position - transform.forward * dstFromTarget;
+		}
+        else
+        {
+			yaw += Input.GetAxis("Joystick X") * mouseSensitivity;
+			pitch -= Input.GetAxis("Joystick Y") * mouseSensitivity;
+			pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
+
+			currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
+			transform.eulerAngles = currentRotation;
+
+			transform.position = target.position - transform.forward * dstFromTarget;
+		}
 
 	}
 

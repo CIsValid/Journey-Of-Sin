@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
 	Transform cameraT;
 	CharacterController controller;
 
+	public bool xBoxController;
+
 	void Start()
 	{
 		//animator = GetComponent<Animator>();
@@ -39,10 +41,24 @@ public class PlayerController : MonoBehaviour
 
 		Move(inputDir, running);
 
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			Jump();
+        if(!xBoxController)
+        {
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				Jump();
+			}
+
+
 		}
+
+		else
+        {
+			if (Input.GetButton("Jump C"))
+			{
+				Jump();
+			}
+		}
+
 		// animator
 		//float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
 		//animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
