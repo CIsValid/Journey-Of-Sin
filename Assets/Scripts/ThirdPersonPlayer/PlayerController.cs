@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour
 				Jump();
 			}
 
-
 		}
 
 		else
