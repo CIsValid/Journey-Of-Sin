@@ -660,7 +660,7 @@ MonoBehaviour:
   gravity: -12
   jumpHeight: 1
   airControlPercent: 1
-  turnSmoothTime: 0.3
+  turnSmoothTime: 0.2
   speedSmoothTime: 0
 --- !u!143 &2073774139
 CharacterController:
@@ -697,5 +697,5 @@ MonoBehaviour:
   gravity: -12
   jumpHeight: 1
   airControlPercent: 1
-  turnSmoothTime: 0.3
+  turnSmoothTime: 0.2
   speedSmoothTime: 0
