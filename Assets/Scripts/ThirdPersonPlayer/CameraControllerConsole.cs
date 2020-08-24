@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
-public class CameraController : MonoBehaviour
+public class CameraControllerConsole : MonoBehaviour
 {
 	public bool lockCursor;
 	public float mouseSensitivity = 10;
@@ -29,15 +29,16 @@ public class CameraController : MonoBehaviour
 
 	void LateUpdate()
 	{
-
-		yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
-		pitch -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+		
+		yaw += Input.GetAxis("Joystick X") * mouseSensitivity;
+		pitch -= Input.GetAxis("Joystick Y") * mouseSensitivity;
 		pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
 
 		currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
 		transform.eulerAngles = currentRotation;
 
 		transform.position = target.position - transform.forward * dstFromTarget;
+		
 
 	}
 

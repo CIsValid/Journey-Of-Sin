@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 1519840397}
   - component: {fileID: 1519840396}
   - component: {fileID: 1519840399}
+  - component: {fileID: 1519840400}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -346,12 +347,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockCursor: 0
-  mouseSensitivity: 1
+  mouseSensitivity: 5
   target: {fileID: 2073774137}
   dstFromTarget: 5
   pitchMinMax: {x: -40, y: 85}
   rotationSmoothTime: 0.12
-  controller: 1
+--- !u!114 &1519840400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519840395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8247ca560b254ed439a3456264d78ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockCursor: 0
+  mouseSensitivity: 1
+  target: {fileID: 1309115911}
+  dstFromTarget: 5
+  pitchMinMax: {x: -40, y: 85}
+  rotationSmoothTime: 0.12
 --- !u!1 &1528319386
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e01ae43632eb9e4cb2495b3344d67b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera: {fileID: 1519840395}
 --- !u!23 &2073774135
 MeshRenderer:
   m_ObjectHideFlags: 0

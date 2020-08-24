@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GamepadChecker : MonoBehaviour
 {
+    public GameObject Camera;
     private int Xbox_One_Controller = 0;
     private int PS4_Controller = 0;
     void Update()
@@ -33,16 +34,23 @@ public class GamepadChecker : MonoBehaviour
         {
             this.gameObject.GetComponent<PlayerController>().enabled = false;
             this.gameObject.GetComponent<PlayerControllerXbox>().enabled = true;
+            Camera.GetComponent<CameraControllerConsole>().enabled = true;
+            Camera.GetComponent<CameraController>().enabled = false;
         }
         else if (PS4_Controller == 1)
         {
             this.gameObject.GetComponent<PlayerController>().enabled = false;
             this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
+            Camera.GetComponent<CameraController>().enabled = false;
+            Camera.GetComponent<CameraControllerConsole>().enabled = true;
         }
         else
         {
             this.gameObject.GetComponent<PlayerController>().enabled = true;
             this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
+            Camera.GetComponent<CameraControllerConsole>().enabled = false;
+            Camera.GetComponent<CameraController>().enabled = true;
+
         }
     }
 }
