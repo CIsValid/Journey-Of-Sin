@@ -71,7 +71,7 @@ public class PlayerControllerXbox : MonoBehaviour
 
 		if (controller.isGrounded)
 		{
-			velocityY = 0;
+			velocityY -= 0;
 		}
 
 	}

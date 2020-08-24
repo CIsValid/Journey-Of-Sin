@@ -30,27 +30,26 @@ public class PlayerController : MonoBehaviour
 		controller = GetComponent<CharacterController>();
 	}
 
-	void Update()
-	{
-		// input
-		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-		Vector2 inputDir = input.normalized;
-		bool running = Input.GetKey(KeyCode.LeftShift);
+    void Update()
+    {
+        // input
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 inputDir = input.normalized;
+        bool running = Input.GetKey(KeyCode.LeftShift);
 
-		Move(inputDir, running);
-
-
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			Jump();
-		}
+        Move(inputDir, running);
 
 
-		// animator
-		//float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
-		//animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
 
-	}
+        // animator
+        //float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
+        //animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
+
+    }
 
 	void Move(Vector2 inputDir, bool running)
 	{
@@ -71,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
 		if (controller.isGrounded)
 		{
-			velocityY = 0;
+			velocityY -= 0;
 		}
 
 	}

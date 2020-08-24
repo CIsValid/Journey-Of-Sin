@@ -655,13 +655,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e9e1d24f2a85940ad9e7bf6aec5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 10
+  walkSpeed: 5
   runSpeed: 8
   gravity: -12
   jumpHeight: 1
   airControlPercent: 1
-  turnSmoothTime: 0.2
-  speedSmoothTime: 0.1
+  turnSmoothTime: 0.3
+  speedSmoothTime: 0
 --- !u!143 &2073774139
 CharacterController:
   m_ObjectHideFlags: 0
@@ -692,10 +692,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770284f16e18c9c4da47d9043083bf3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 2
-  runSpeed: 6
+  walkSpeed: 5
+  runSpeed: 8
   gravity: -12
   jumpHeight: 1
-  airControlPercent: 0
-  turnSmoothTime: 0.2
-  speedSmoothTime: 0.1
+  airControlPercent: 1
+  turnSmoothTime: 0.3
+  speedSmoothTime: 0
