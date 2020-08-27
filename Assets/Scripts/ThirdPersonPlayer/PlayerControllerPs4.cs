@@ -61,8 +61,7 @@ public class PlayerControllerPs4 : MonoBehaviour
 		}
 
 		float targetSpeed = ((running) ? runSpeed : walkSpeed) * inputDir.magnitude;
-		//currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, GetModifiedSmoothTime(speedSmoothTime));
-		currentSpeed = (Mathf.Abs(inputDir.x) + Mathf.Abs(inputDir.y)) * runSpeed;
+		currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, GetModifiedSmoothTime(speedSmoothTime));
 
 		velocityY += Time.deltaTime * gravity;
 		Vector3 velocity = transform.forward * currentSpeed + Vector3.up * velocityY;
@@ -75,6 +74,11 @@ public class PlayerControllerPs4 : MonoBehaviour
 			velocityY -= 0;
 		}
 
+	}
+	void ControllerMove()
+    {
+		float xVelocityAdj = Input.GetAxis("Horizontal");
+		float zVelocityAdj = Input.GetAxis("Vertical");
 	}
 
 	void Jump()
