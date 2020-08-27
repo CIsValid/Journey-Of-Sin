@@ -37,7 +37,7 @@ public class PlayerControllerPs4 : MonoBehaviour
 		Vector2 inputDir = input;
 		if (input.magnitude >= 1)
 			inputDir = input.normalized;
-		bool running = Input.GetKey(KeyCode.LeftShift);
+		bool running = Input.GetButton("RunPS");
 
 		Move(inputDir, running);
 
