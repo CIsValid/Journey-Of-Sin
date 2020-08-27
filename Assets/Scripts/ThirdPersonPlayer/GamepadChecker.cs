@@ -36,6 +36,7 @@ public class GamepadChecker : MonoBehaviour
             this.gameObject.GetComponent<PlayerControllerXbox>().enabled = true;
             this.gameObject.GetComponent<PlayerControllerPs4>().enabled = false;
             Camera.GetComponent<CameraControllerConsole>().enabled = true;
+            Camera.GetComponent<CameraControllerPs>().enabled = false;
             Camera.GetComponent<CameraController>().enabled = false;
         }
         else if (PS4_Controller == 1)
@@ -44,7 +45,8 @@ public class GamepadChecker : MonoBehaviour
             this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
             this.gameObject.GetComponent<PlayerControllerPs4>().enabled = true;
             Camera.GetComponent<CameraController>().enabled = false;
-            Camera.GetComponent<CameraControllerConsole>().enabled = true;
+            Camera.GetComponent<CameraControllerConsole>().enabled = false;
+            Camera.GetComponent<CameraControllerPs>().enabled = true;
         }
         else
         {
@@ -52,6 +54,7 @@ public class GamepadChecker : MonoBehaviour
             this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
             this.gameObject.GetComponent<PlayerControllerPs4>().enabled = false;
             Camera.GetComponent<CameraControllerConsole>().enabled = false;
+            Camera.GetComponent<CameraControllerPs>().enabled = false;
             Camera.GetComponent<CameraController>().enabled = true;
 
         }

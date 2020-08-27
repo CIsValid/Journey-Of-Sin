@@ -40,7 +40,7 @@ public class PlayerControllerPs4 : MonoBehaviour
 		Move(inputDir, running);
 
 
-		if (Input.GetButton("Jump C"))
+		if (Input.GetButton("Jump PS"))
 		{
 			Jump();
 		}
@@ -61,7 +61,8 @@ public class PlayerControllerPs4 : MonoBehaviour
 		}
 
 		float targetSpeed = ((running) ? runSpeed : walkSpeed) * inputDir.magnitude;
-		currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, GetModifiedSmoothTime(speedSmoothTime));
+		//currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, GetModifiedSmoothTime(speedSmoothTime));
+		currentSpeed = (Mathf.Abs(inputDir.x) + Mathf.Abs(inputDir.y)) * targetSpeed;
 
 		velocityY += Time.deltaTime * gravity;
 		Vector3 velocity = transform.forward * currentSpeed + Vector3.up * velocityY;
