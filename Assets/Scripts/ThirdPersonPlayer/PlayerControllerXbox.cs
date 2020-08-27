@@ -34,7 +34,9 @@ public class PlayerControllerXbox : MonoBehaviour
 	{
 		// input
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-		Vector2 inputDir = input.normalized;
+		Vector2 inputDir = input;
+		if (input.magnitude >= 1)
+			inputDir = input.normalized;
 		bool running = Input.GetKey(KeyCode.LeftShift);
 
 		Move(inputDir, running);

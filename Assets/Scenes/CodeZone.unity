@@ -713,8 +713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770284f16e18c9c4da47d9043083bf3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
-  runSpeed: 8
+  walkSpeed: 9
+  runSpeed: 9
   gravity: -12
   jumpHeight: 1
   airControlPercent: 1
@@ -746,8 +746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 647846dde8b7d6844a103a84939ba258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
-  runSpeed: 8
+  walkSpeed: 9
+  runSpeed: 9
   gravity: -12
   jumpHeight: 1
   airControlPercent: 1

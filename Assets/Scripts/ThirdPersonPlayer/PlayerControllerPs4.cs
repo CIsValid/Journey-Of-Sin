@@ -34,8 +34,10 @@ public class PlayerControllerPs4 : MonoBehaviour
 	{
 		// input
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-		Vector2 inputDir = input.normalized;
-		bool running = Input.GetButton("RunPS");
+		Vector2 inputDir = input;
+		if (input.magnitude >= 1)
+			inputDir = input.normalized;
+		bool running = Input.GetKey(KeyCode.LeftShift);
 
 		Move(inputDir, running);
 
@@ -74,11 +76,6 @@ public class PlayerControllerPs4 : MonoBehaviour
 			velocityY -= 0;
 		}
 
-	}
-	void ControllerMove() // Prototyping
-    {
-		float xVelocityAdj = Input.GetAxis("Horizontal");
-		float zVelocityAdj = Input.GetAxis("Vertical");
 	}
 
 	void Jump()
