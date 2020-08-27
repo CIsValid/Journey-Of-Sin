@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 1519840396}
   - component: {fileID: 1519840399}
   - component: {fileID: 1519840400}
+  - component: {fileID: 1519840401}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -349,7 +350,7 @@ MonoBehaviour:
   lockCursor: 0
   mouseSensitivity: 5
   target: {fileID: 2073774137}
-  dstFromTarget: 5
+  dstFromTarget: 6
   pitchMinMax: {x: -40, y: 85}
   rotationSmoothTime: 0.12
 --- !u!114 &1519840400
@@ -367,7 +368,25 @@ MonoBehaviour:
   lockCursor: 0
   mouseSensitivity: 1
   target: {fileID: 1309115911}
-  dstFromTarget: 5
+  dstFromTarget: 6
+  pitchMinMax: {x: -40, y: 85}
+  rotationSmoothTime: 0.12
+--- !u!114 &1519840401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519840395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8427f142b976c74a8ce99699f30c305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockCursor: 0
+  mouseSensitivity: 0.3
+  target: {fileID: 1309115911}
+  dstFromTarget: 6
   pitchMinMax: {x: -40, y: 85}
   rotationSmoothTime: 0.12
 --- !u!1 &1528319386
@@ -554,10 +573,12 @@ GameObject:
   - component: {fileID: 2073774137}
   - component: {fileID: 2073774136}
   - component: {fileID: 2073774135}
+  - component: {fileID: 2073774139}
+  - component: {fileID: 2073774141}
   - component: {fileID: 2073774134}
   - component: {fileID: 2073774138}
   - component: {fileID: 2073774140}
-  - component: {fileID: 2073774139}
+  - component: {fileID: 2073774142}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -660,7 +681,7 @@ MonoBehaviour:
   gravity: -12
   jumpHeight: 1
   airControlPercent: 1
-  turnSmoothTime: 0.3
+  turnSmoothTime: 0.2
   speedSmoothTime: 0
 --- !u!143 &2073774139
 CharacterController:
@@ -697,5 +718,38 @@ MonoBehaviour:
   gravity: -12
   jumpHeight: 1
   airControlPercent: 1
-  turnSmoothTime: 0.3
+  turnSmoothTime: 0.2
+  speedSmoothTime: 0
+--- !u!136 &2073774141
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073774133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &2073774142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073774133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647846dde8b7d6844a103a84939ba258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 5
+  runSpeed: 8
+  gravity: -12
+  jumpHeight: 1
+  airControlPercent: 1
+  turnSmoothTime: 0.2
   speedSmoothTime: 0
