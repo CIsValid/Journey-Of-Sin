@@ -771,16 +771,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a144b3a3da529fc4486dae193ddee0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueCamera: {fileID: 1670543619}
+  dialogueHolder:
+  - Hello There People
+  - Rarararararaa
+  - Hallo
+  goodDialogueHolder:
+  - Good Dialogue
+  badDialogueHolder:
+  - Bad Dialogue
+  pointsToGive: 0
+  pointsForGoodDialogue: 0
+  affectStats: 0
+  goodOrBadDialogue: 0
+  CustomDialogueCamera: 1
+--- !u!1 &819018257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 819018259}
+  - component: {fileID: 819018258}
+  m_Layer: 0
+  m_Name: MasterDialogueController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &819018258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819018257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651a3a057eb2d2f439fba8dec374a194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   player: {fileID: 2073774133}
   playerCamera: {fileID: 1519840395}
-  dialogueCamera: {fileID: 1670543619}
-  canvas: {fileID: 1022802493}
-  text: {fileID: 1087402546}
-  dialogueList:
-  - Hello there young one :)
-  - What are you looking to do here?
-  - 
-  hasDialogueBeenHad: 0
+  dialogueCamera: {fileID: 0}
+--- !u!4 &819018259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819018257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -30.267742, y: -13.91421, z: -4.9101915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &949953890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,6 +1813,51 @@ Transform:
   - {fileID: 1519840398}
   m_Father: {fileID: 2073774137}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1361571563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1361571565}
+  - component: {fileID: 1361571564}
+  m_Layer: 0
+  m_Name: MasterBranchingStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1361571564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361571563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36f3a8df7b3d40469384473e40daf25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goodPoints: 0
+  badPoints: 0
+--- !u!4 &1361571565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361571563}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -30.267742, y: -13.91421, z: -4.9101915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431623297
 GameObject:

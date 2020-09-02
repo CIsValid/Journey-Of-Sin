@@ -31,8 +31,6 @@ public class DialogueController : MonoBehaviour
 
     public void EnableAllControls()
     {
-        playerCamera.SetActive(true);
-        dialogueCamera.SetActive(false);
 
         player.GetComponent<GamepadChecker>().enabled = true;
         player.GetComponent<PlayerController>().enabled = true;
@@ -43,7 +41,20 @@ public class DialogueController : MonoBehaviour
         playerCamera.GetComponent<CameraControllerConsole>().enabled = true;
         playerCamera.GetComponent<CameraControllerPs>().enabled = true;
 
-        Destroy(this.gameObject);
+    }
 
+    public void ActivateDialogueCamera()
+    {
+        playerCamera.SetActive(false);
+        dialogueCamera.SetActive(true);
+    }
+    public void DeactivateDialogueCamera()
+    {
+        playerCamera.SetActive(true);
+        dialogueCamera.SetActive(false);
+    }
+    public void DialogueInputActions()
+    {
+        // Whatever input can be made during dialogue :)
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 
 public class Dialogue : MonoBehaviour
 {
+    public GameObject dialogueCamera;
+
     public List<string> dialogueHolder = new List<string>();
 
     public List<string> goodDialogueHolder = new List<string>();
@@ -19,6 +21,9 @@ public class Dialogue : MonoBehaviour
 
     public bool affectStats;
     public bool goodOrBadDialogue;
+    public bool CustomDialogueCamera;
+
+    private bool dialogueHasStarted;
 
     private DialogueController dialogueController;
 
@@ -32,7 +37,14 @@ public class Dialogue : MonoBehaviour
         switch (goodOrBadDialogue)
         {
             case true:
-                numberOfSentances = goodDialogueHolder.Count + badDialogueHolder.Count;
+                if(branchingStats.goodPoints >= pointsForGoodDialogue)
+                {
+                    numberOfSentances = goodDialogueHolder.Count;
+                }
+                else
+                {
+                    numberOfSentances = badDialogueHolder.Count;
+                }
                 break;
 
             case false:
@@ -41,46 +53,42 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    public void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        dialogueController.DisableAllControls();
 
-        if(goodOrBadDialogue)
+        if(other.CompareTag("Player"))
         {
-            if(branchingStats.goodPoints >= pointsForGoodDialogue)
+            if(CustomDialogueCamera)
             {
-                for (int i = 0; i < goodDialogueHolder.Count; i++)
-                {
-                    switch (i)
-                    {
-                        case 1:
+                dialogueController.dialogueCamera = dialogueCamera;
 
-                            break;
+                dialogueController.ActivateDialogueCamera();
+            }
+
+            dialogueController.DisableAllControls();
+
+            if (goodOrBadDialogue)
+            {
+                if (branchingStats.goodPoints >= pointsForGoodDialogue)
+                {
+                    for (int i = 0; i < numberOfSentances; i++)
+                    {
+                        Debug.Log(goodDialogueHolder[i]);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < numberOfSentances; i++)
+                    {
+                        Debug.Log(badDialogueHolder[i]);
                     }
                 }
             }
             else
             {
-                for (int i = 0; i < badDialogueHolder.Count; i++)
+                for (int i = 0; i < numberOfSentances; i++)
                 {
-                    switch (i)
-                    {
-                        case 1:
-
-                            break;
-                    }
-                }
-            }
-        }
-        else
-        {
-            for (int i = 0; i < dialogueHolder.Count; i++)
-            {
-                switch (i)
-                {
-                    case 1:
-
-                        break;
+                    Debug.Log(dialogueHolder[i]);
                 }
             }
         }
