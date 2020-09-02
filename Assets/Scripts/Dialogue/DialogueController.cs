@@ -4,49 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueController : MonoBehaviour
 {
+    public static DialogueController instance;
+
     public GameObject player;
     public GameObject playerCamera;
     public GameObject dialogueCamera;
-    public GameObject canvas;
-    public Text text;
 
-    public List<string> dialogueList = new List<string>();
-
-    public bool hasDialogueBeenHad;
-
-    private void Update()
+    private void Start()
     {
-
-        if(hasDialogueBeenHad)
-        {
-            EnableAllControls();
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(!hasDialogueBeenHad)
-        {
-            if (other.CompareTag("Player"))
-            {
-                canvas.SetActive(true);
-
-                if (dialogueCamera != null)
-                {
-                    DisableAllControls();
-
-                    //activate Camera
-                    playerCamera.SetActive(false);
-                    dialogueCamera.SetActive(true);
-                }
-
-                DisableAllControls();
-
-            }
-        }
-
+        instance = this;
     }
 
     public void DisableAllControls()
@@ -65,8 +33,6 @@ public class DialogueManager : MonoBehaviour
     {
         playerCamera.SetActive(true);
         dialogueCamera.SetActive(false);
-
-        canvas.SetActive(false);
 
         player.GetComponent<GamepadChecker>().enabled = true;
         player.GetComponent<PlayerController>().enabled = true;
