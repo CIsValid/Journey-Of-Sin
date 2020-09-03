@@ -816,7 +816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2073774133}
   playerCamera: {fileID: 1519840395}
-  dialogueCamera: {fileID: 0}
+  dialogueCameraHolder: {fileID: 0}
 --- !u!4 &819018259
 Transform:
   m_ObjectHideFlags: 0

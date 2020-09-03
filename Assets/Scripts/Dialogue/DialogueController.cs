@@ -10,7 +10,7 @@ public class DialogueController : MonoBehaviour
 
     public GameObject player;
     public GameObject playerCamera;
-    public GameObject dialogueCamera;
+    public GameObject dialogueCameraHolder;
 
     private void Start()
     {
@@ -46,12 +46,12 @@ public class DialogueController : MonoBehaviour
     public void ActivateDialogueCamera()
     {
         playerCamera.SetActive(false);
-        dialogueCamera.SetActive(true);
+        dialogueCameraHolder.SetActive(true);
     }
     public void DeactivateDialogueCamera()
     {
         playerCamera.SetActive(true);
-        dialogueCamera.SetActive(false);
+        dialogueCameraHolder.SetActive(false);
     }
     public void DialogueInputActions()
     {

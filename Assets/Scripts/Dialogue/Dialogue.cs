@@ -60,7 +60,7 @@ public class Dialogue : MonoBehaviour
         {
             if(CustomDialogueCamera)
             {
-                dialogueController.dialogueCamera = dialogueCamera;
+                dialogueController.dialogueCameraHolder = dialogueCamera;
 
                 dialogueController.ActivateDialogueCamera();
             }
