@@ -11,6 +11,10 @@ public class PlayerManager : MonoBehaviour
     public delegate void OnHealthChangeDelegate(int newHealth);
     public event OnHealthChangeDelegate OnHealthChange;
 
+    // Jumping & Flying
+    public bool isJumping;
+    public bool isFlying;
+
     private void Start()
     {
         instance = this;
@@ -19,6 +23,25 @@ public class PlayerManager : MonoBehaviour
     private void Update()
     {
         HealthCheck();
+
+        if(isJumping)
+        {
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                isFlying = true;
+            }
+        }
+
+        if(isFlying)
+        {
+            DialogueController.instance.DisableAllControls();
+            this.gameObject.GetComponent<FlyingController>().enabled = true;
+        }
+        else
+        {
+            DialogueController.instance.EnableAllControls();
+            isFlying = false;
+        }
     }
 
     private void HealthCheck()

@@ -2825,6 +2825,7 @@ GameObject:
   - component: {fileID: 2073774140}
   - component: {fileID: 2073774142}
   - component: {fileID: 2073774143}
+  - component: {fileID: 2073774144}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3012,6 +3013,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+--- !u!114 &2073774144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073774133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a7010246a18a94a8f5ee2b6d5a88ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardSpeed: 25
+  strafeSpeed: 7.5
+  hoverSpeed: 5
+  lookRateSpeed: 90
+  rollSpeed: 90
+  rollAcceleration: 3.5
 --- !u!1 &2139853253
 GameObject:
   m_ObjectHideFlags: 0
