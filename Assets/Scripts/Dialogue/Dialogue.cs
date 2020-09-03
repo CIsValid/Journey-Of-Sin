@@ -31,7 +31,6 @@ public class Dialogue : MonoBehaviour
 
     private void Start()
     {
-        dialogueController = DialogueController.instance;
         branchingStats = BranchingStats.instance;
 
         switch (goodOrBadDialogue)
@@ -58,14 +57,15 @@ public class Dialogue : MonoBehaviour
 
         if(other.CompareTag("Player"))
         {
+            
+
             if(CustomDialogueCamera)
             {
-                dialogueController.dialogueCameraHolder = dialogueCamera;
-
-                dialogueController.ActivateDialogueCamera();
+                DialogueController.instance.dialogueCameraHolder = dialogueCamera;
+                DialogueController.instance.ActivateDialogueCamera();
             }
 
-            dialogueController.DisableAllControls();
+            DialogueController.instance.DisableAllControls();
 
             if (goodOrBadDialogue)
             {
