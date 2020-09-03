@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager instance;
     // Health
     public int health = 5;
     private int m_health = 5;
     public delegate void OnHealthChangeDelegate(int newHealth);
     public event OnHealthChangeDelegate OnHealthChange;
 
-
+    private void Start()
+    {
+        instance = this;
+    }
 
     private void Update()
     {
         HealthCheck();
-
     }
 
     private void HealthCheck()
