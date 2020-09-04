@@ -3046,7 +3046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf715f4a3783024d844fa780c02d2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 2073774139}
+  upwardsAcceleration: {x: 0, y: 3, z: 0}
+  hoverGravity: {x: 0, y: -1, z: 0}
   walkSpeed: 8
   runSpeed: 12
   gravity: 0
@@ -3054,9 +3055,6 @@ MonoBehaviour:
   airControlPercent: 1
   turnSmoothTime: 0.1
   speedSmoothTime: 0
-  speed: 10
-  rotationSpeed: 100
-  hoverGravity: {x: 0, y: -1, z: 0}
 --- !u!1 &2139853253
 GameObject:
   m_ObjectHideFlags: 0
