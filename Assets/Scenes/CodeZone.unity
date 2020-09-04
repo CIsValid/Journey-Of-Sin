@@ -783,8 +783,8 @@ MonoBehaviour:
   pointsToGive: 0
   pointsForGoodDialogue: 0
   affectStats: 0
-  goodOrBadDialogue: 0
-  CustomDialogueCamera: 1
+  goodOrBadDialogue: 1
+  CustomDialogueCamera: 0
 --- !u!1 &819018257
 GameObject:
   m_ObjectHideFlags: 0

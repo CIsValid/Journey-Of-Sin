@@ -25,18 +25,12 @@ public class Dialogue : MonoBehaviour
 
     private bool dialogueHasStarted;
 
-    private DialogueController dialogueController;
-
-    private BranchingStats branchingStats;
-
     private void Start()
     {
-        branchingStats = BranchingStats.instance;
-
         switch (goodOrBadDialogue)
         {
             case true:
-                if(branchingStats.goodPoints >= pointsForGoodDialogue)
+                if(BranchingStats.instance.goodPoints >= pointsForGoodDialogue)
                 {
                     numberOfSentances = goodDialogueHolder.Count;
                 }
@@ -69,7 +63,7 @@ public class Dialogue : MonoBehaviour
 
             if (goodOrBadDialogue)
             {
-                if (branchingStats.goodPoints >= pointsForGoodDialogue)
+                if (BranchingStats.instance.goodPoints >= pointsForGoodDialogue)
                 {
                     for (int i = 0; i < numberOfSentances; i++)
                     {
