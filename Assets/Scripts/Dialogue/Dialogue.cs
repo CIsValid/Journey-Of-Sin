@@ -23,8 +23,6 @@ public class Dialogue : MonoBehaviour
     public bool goodOrBadDialogue;
     public bool CustomDialogueCamera;
 
-    private bool dialogueHasStarted;
-
     private void Start()
     {
         switch (goodOrBadDialogue)
