@@ -34,8 +34,10 @@ public class PlayerControllerPs4 : MonoBehaviour
 	{
 		// input
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-		Vector2 inputDir = input.normalized;
-		bool running = Input.GetKey(KeyCode.LeftShift);
+		Vector2 inputDir = input;
+		if (input.magnitude >= 1)
+			inputDir = input.normalized;
+		bool running = Input.GetButton("RunPS");
 
 		Move(inputDir, running);
 
@@ -61,14 +63,13 @@ public class PlayerControllerPs4 : MonoBehaviour
 		}
 
 		float targetSpeed = ((running) ? runSpeed : walkSpeed) * inputDir.magnitude;
-		//currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, GetModifiedSmoothTime(speedSmoothTime));
-		currentSpeed = (Mathf.Abs(inputDir.x) + Mathf.Abs(inputDir.y)) * targetSpeed;
+		currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedSmoothVelocity, GetModifiedSmoothTime(speedSmoothTime));
 
 		velocityY += Time.deltaTime * gravity;
 		Vector3 velocity = transform.forward * currentSpeed + Vector3.up * velocityY;
 
 		controller.Move(velocity * Time.deltaTime);
-		currentSpeed = new Vector2(controller.velocity.x, controller.velocity.z).magnitude;
+		currentSpeed = new Vector2 (controller.velocity.x, controller.velocity.z).magnitude;
 
 		if (controller.isGrounded)
 		{

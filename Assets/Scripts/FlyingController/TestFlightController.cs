@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControllerXbox : MonoBehaviour
+public class TestFlightController : MonoBehaviour
 {
-	public float walkSpeed = 2;
+    public Vector3 upwardsAcceleration;
+    public Vector3 hoverGravity;
+    public float walkSpeed = 2;
 	public float runSpeed = 6;
 	public float gravity = -12;
-	public float jumpHeight = 1;
 	[Range(0, 1)]
 	public float airControlPercent;
 
@@ -23,6 +24,8 @@ public class PlayerControllerXbox : MonoBehaviour
 	Transform cameraT;
 	CharacterController controller;
 
+    public float timer = 5f;
+
 	void Start()
 	{
 		//animator = GetComponent<Animator>();
@@ -30,29 +33,37 @@ public class PlayerControllerXbox : MonoBehaviour
 		controller = GetComponent<CharacterController>();
 	}
 
-	void Update()
-	{
-		// input
-		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-		Vector2 inputDir = input;
-		if (input.magnitude >= 1)
-			inputDir = input.normalized;
-		bool running = Input.GetKey(KeyCode.LeftShift);
+    void Update()
+    {
 
-		Move(inputDir, running);
+        // Ground Check
+        if(controller.isGrounded)
+        {
+            timer = 5f;
+            PlayerManager.instance.isFlying = false;
+        }
+        else{
+            timer -= Time.deltaTime;
+        }
 
+        // input
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 inputDir = input.normalized;
+        bool running = Input.GetKey(KeyCode.LeftShift);
 
-		if (Input.GetButton("Jump C"))
-		{
-			Jump();
-		}
+        Move(inputDir, running);
 
+        Higher();
 
-		// animator
-		//float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
-		//animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
+        Lower();
 
-	}
+        controller.Move(hoverGravity * Time.deltaTime);
+
+        // animator
+        //float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
+        //animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
+
+    }
 
 	void Move(Vector2 inputDir, bool running)
 	{
@@ -71,20 +82,6 @@ public class PlayerControllerXbox : MonoBehaviour
 		controller.Move(velocity * Time.deltaTime);
 		currentSpeed = new Vector2(controller.velocity.x, controller.velocity.z).magnitude;
 
-		if (controller.isGrounded)
-		{
-			velocityY -= 0;
-		}
-
-	}
-
-	void Jump()
-	{
-		if (controller.isGrounded)
-		{
-			float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight);
-			velocityY = jumpVelocity;
-		}
 	}
 
 	float GetModifiedSmoothTime(float smoothTime)
@@ -100,4 +97,27 @@ public class PlayerControllerXbox : MonoBehaviour
 		}
 		return smoothTime / airControlPercent;
 	}
+    void Higher()
+    {
+        if(timer >= 0)
+        {
+            if(Input.GetKey(KeyCode.Space))
+            {
+                // flap with wings anim.SetBool("Flapping", true)
+                controller.Move(upwardsAcceleration * Time.deltaTime);
+            }
+
+        }
+    }
+
+    void Lower()
+    {
+        if(Input.GetKey(KeyCode.LeftControl)) 
+        {
+            // Stop flapping wings anim.SetBool("Flapping", false)
+            controller.Move(-upwardsAcceleration * Time.deltaTime);
+
+        }
+        
+    }
 }

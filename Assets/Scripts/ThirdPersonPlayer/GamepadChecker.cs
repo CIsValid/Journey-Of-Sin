@@ -32,31 +32,100 @@ public class GamepadChecker : MonoBehaviour
 
         if (Xbox_One_Controller == 1)
         {
-            this.gameObject.GetComponent<PlayerController>().enabled = false;
-            this.gameObject.GetComponent<PlayerControllerXbox>().enabled = true;
-            this.gameObject.GetComponent<PlayerControllerPs4>().enabled = false;
-            Camera.GetComponent<CameraControllerConsole>().enabled = true;
-            Camera.GetComponent<CameraControllerPs>().enabled = false;
-            Camera.GetComponent<CameraController>().enabled = false;
+            if(PlayerManager.instance.isFlying)
+            {
+                xBoxCameraController();
+            }
+            else
+            {
+                ActivateXboxControls();
+            }
+
         }
         else if (PS4_Controller == 1)
         {
-            this.gameObject.GetComponent<PlayerController>().enabled = false;
-            this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
-            this.gameObject.GetComponent<PlayerControllerPs4>().enabled = true;
-            Camera.GetComponent<CameraController>().enabled = false;
-            Camera.GetComponent<CameraControllerConsole>().enabled = false;
-            Camera.GetComponent<CameraControllerPs>().enabled = true;
+            if(PlayerManager.instance.isFlying)
+            {
+                PS4CameraController();
+            }
+            else
+            {
+                ActivatePS4Controls();
+            }
+
         }
         else
         {
+            if(PlayerManager.instance.isFlying)
+            {
+                PcCameraController();
+            }
+            else
+            {
+                ActivatePCControls();
+            }
+
+        }
+    }
+
+    public void ActivateXboxControls()
+    {
+            this.gameObject.GetComponent<PlayerController>().enabled = false;
+            this.gameObject.GetComponent<PlayerControllerXbox>().enabled = true;
+            this.gameObject.GetComponent<PlayerControllerPs4>().enabled = false;
+
+            Camera.GetComponent<CameraControllerConsole>().enabled = true;
+            Camera.GetComponent<CameraControllerPs>().enabled = false;
+            Camera.GetComponent<CameraController>().enabled = false;
+    }
+    public void ActivatePS4Controls()
+    {
+            this.gameObject.GetComponent<PlayerController>().enabled = false;
+            this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
+            this.gameObject.GetComponent<PlayerControllerPs4>().enabled = true;
+
+            Camera.GetComponent<CameraController>().enabled = false;
+            Camera.GetComponent<CameraControllerConsole>().enabled = false;
+            Camera.GetComponent<CameraControllerPs>().enabled = true;
+    }
+    public void ActivatePCControls()
+    {
             this.gameObject.GetComponent<PlayerController>().enabled = true;
             this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
             this.gameObject.GetComponent<PlayerControllerPs4>().enabled = false;
+
             Camera.GetComponent<CameraControllerConsole>().enabled = false;
             Camera.GetComponent<CameraControllerPs>().enabled = false;
             Camera.GetComponent<CameraController>().enabled = true;
+    }
+    public void xBoxCameraController()
+    {
+            this.gameObject.GetComponent<PlayerController>().enabled = false;
+            this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
+            this.gameObject.GetComponent<PlayerControllerPs4>().enabled = false;
 
-        }
+            Camera.GetComponent<CameraControllerConsole>().enabled = true;
+            Camera.GetComponent<CameraControllerPs>().enabled = false;
+            Camera.GetComponent<CameraController>().enabled = false;
+    }
+    public void PcCameraController()
+    {
+            this.gameObject.GetComponent<PlayerController>().enabled = false;
+            this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
+            this.gameObject.GetComponent<PlayerControllerPs4>().enabled = false;
+
+            Camera.GetComponent<CameraControllerConsole>().enabled = false;
+            Camera.GetComponent<CameraControllerPs>().enabled = false;
+            Camera.GetComponent<CameraController>().enabled = true;
+    }
+    public void PS4CameraController()
+    {
+            this.gameObject.GetComponent<PlayerController>().enabled = false;
+            this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
+            this.gameObject.GetComponent<PlayerControllerPs4>().enabled = false;
+
+            Camera.GetComponent<CameraController>().enabled = false;
+            Camera.GetComponent<CameraControllerConsole>().enabled = false;
+            Camera.GetComponent<CameraControllerPs>().enabled = true;
     }
 }

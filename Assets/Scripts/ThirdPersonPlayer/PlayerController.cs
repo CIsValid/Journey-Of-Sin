@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         Move(inputDir, running);
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             Jump();
         }
@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
 		if (controller.isGrounded)
 		{
+			PlayerManager.instance.isJumping = false;
 			velocityY -= 0;
 		}
 
@@ -81,6 +82,9 @@ public class PlayerController : MonoBehaviour
 		{
 			float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight);
 			velocityY = jumpVelocity;
+
+			PlayerManager.instance.isJumping = true;
+
 		}
 	}
 
