@@ -6,13 +6,26 @@ using UnityEngine.AI;
 using UnityEngine.SocialPlatforms;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class GroundedPatroler : MonoBehaviour
+public class DistractionEnemy : MonoBehaviour
 {
+    public enum WorldOrigin
+    {
+        MainIsland,
+        Desert,
+        UnderWater,
+        Limbo,
+        Mountain,
+        Jungle,
+
+    }
+    public WorldOrigin worldOrigin;
+    
     public float patrolSpeed = 5;
     public float chaseSpeed = 9f;
     public float patrolWaitTimer = 1f;
     public float chaseWaitTimer = 5f; 
     public float health = 100;
+    public float attentionRange;
 
     public Transform[] patrolWayPoints;
 
@@ -27,6 +40,7 @@ public class GroundedPatroler : MonoBehaviour
     private int wayPointIndex;
     private int treasureCheck;
 
+    public bool chasingPlayer;
     public bool hasBeenRobbed;
     public bool hasTreasure = false;
 
@@ -50,11 +64,64 @@ public class GroundedPatroler : MonoBehaviour
     private void Update()
     {
 
+        float distance = Vector3.Distance(player.position, transform.position);
+
+        if(distance <= attentionRange)
+        {
+            chasingPlayer = true;
+        }
+        else
+        {
+            chasingPlayer = false;
+        }
+
+        switch (chasingPlayer)
+        {
+            case true:
+
+            ChaseState();
+
+            Debug.Log("Chasing The Player");
+            break;
+
+            case false:
+            
+            PatrolState();
+
+            Debug.Log("Patroling State");
+            break;
+        }
 
         if(hasTreasure)
         {
             // If player steals hasTresure goes back to false
         }
+    }
+
+    void PatrolState()
+    {
+        nav.speed = patrolSpeed;
+
+        if(!nav.pathPending && nav.remainingDistance < 0.5f)
+        {
+            if(patrolWayPoints.Length == 0) return;
+
+            nav.destination = patrolWayPoints[wayPointIndex].position;
+
+            wayPointIndex = (wayPointIndex + 1) % patrolWayPoints.Length;
+        }
+
+    }
+
+    void ChaseState()
+    {
+        nav.speed = chaseSpeed;
+        nav.destination = player.position;
+    }
+
+    void InvestiagtionState()
+    {
+        // Here we put the logic of the investigation
     }
 
     void TreasureChecker()
@@ -83,5 +150,12 @@ public class GroundedPatroler : MonoBehaviour
 
                 break;
         }
+    }
+
+    private void OnDrawGizmos() {
+
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawWireSphere(this.transform.position, attentionRange);
     }
 }
