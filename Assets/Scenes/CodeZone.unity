@@ -259,7 +259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7caf68a2c7f0494690e189a8bcec48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldOrigin: 0
   patrolSpeed: 3.5
   chaseSpeed: 7
   patrolWaitTimer: 1

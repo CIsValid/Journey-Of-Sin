@@ -8,18 +8,6 @@ using UnityEngine.SocialPlatforms;
 [RequireComponent(typeof(NavMeshAgent))]
 public class DistractionEnemy : MonoBehaviour
 {
-    public enum WorldOrigin
-    {
-        MainIsland,
-        Desert,
-        UnderWater,
-        Limbo,
-        Mountain,
-        Jungle,
-
-    }
-    public WorldOrigin worldOrigin;
-    
     public float patrolSpeed = 5;
     public float chaseSpeed = 9f;
     public float patrolWaitTimer = 1f;
