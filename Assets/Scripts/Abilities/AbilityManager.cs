@@ -39,7 +39,7 @@ public class AbilityManager : MonoBehaviour
         switch (worldLocation)
         {
             case "MainIsland":
-                
+                TumbleWeedAbility();
                 break;
             
             case "Desert":
@@ -73,7 +73,7 @@ public class AbilityManager : MonoBehaviour
 
     public void TumbleWeedAbility()
     {
-        if (worldLocation == "Desert" && Input.GetKey(KeyCode.Mouse0) && tumbleWeedCooldown <= 0)
+        if (Input.GetKey(KeyCode.Mouse0) && tumbleWeedCooldown <= 0)
         {
             Debug.Log("TumbleWeed :D");
 
