@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour
 
     public bool isJumping;
     public bool isFlying;
+    public bool isInMineCart;
 
     private void Start()
     {
