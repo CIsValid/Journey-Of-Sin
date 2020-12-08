@@ -19,7 +19,6 @@ GameObject:
   - component: {fileID: 7458425170256816941}
   - component: {fileID: 7167858327117536442}
   - component: {fileID: 7458425170256816940}
-  - component: {fileID: 7458425170256816979}
   - component: {fileID: 7458425170256816978}
   m_Layer: 0
   m_Name: Player
@@ -223,24 +222,6 @@ MonoBehaviour:
   health: 5
   isJumping: 0
   isFlying: 0
---- !u!114 &7458425170256816979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7458425170256816934}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a7010246a18a94a8f5ee2b6d5a88ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forwardSpeed: 25
-  strafeSpeed: 7.5
-  hoverSpeed: 5
-  lookRateSpeed: 90
-  rollSpeed: 90
-  rollAcceleration: 3.5
 --- !u!114 &7458425170256816978
 MonoBehaviour:
   m_ObjectHideFlags: 0

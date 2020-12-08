@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,13 @@ public class GamepadChecker : MonoBehaviour
     public GameObject Camera;
     private int Xbox_One_Controller = 0;
     private int PS4_Controller = 0;
+    private bool inMineCart;
+
+    private void Start()
+    {
+        
+    }
+
     void Update()
     {
         string[] names = Input.GetJoystickNames();
@@ -29,42 +37,48 @@ public class GamepadChecker : MonoBehaviour
             }
         }
 
-
-        if (Xbox_One_Controller == 1)
+        if (PlayerManager.instance.isInMineCart)
         {
-            if(PlayerManager.instance.isFlying)
-            {
-                xBoxCameraController();
-            }
-            else
-            {
-                ActivateXboxControls();
-            }
-
-        }
-        else if (PS4_Controller == 1)
-        {
-            if(PlayerManager.instance.isFlying)
-            {
-                PS4CameraController();
-            }
-            else
-            {
-                ActivatePS4Controls();
-            }
-
+            DisableAllControls();
         }
         else
         {
-            if(PlayerManager.instance.isFlying)
+            if (Xbox_One_Controller == 1)
             {
-                PcCameraController();
+                if(PlayerManager.instance.isFlying)
+                {
+                    xBoxCameraController();
+                }
+                else
+                {
+                    ActivateXboxControls();
+                }
+
+            }
+            else if (PS4_Controller == 1)
+            {
+                if(PlayerManager.instance.isFlying)
+                {
+                    PS4CameraController();
+                }
+                else
+                {
+                    ActivatePS4Controls();
+                }
+
             }
             else
             {
-                ActivatePCControls();
-            }
+                if(PlayerManager.instance.isFlying)
+                {
+                    PcCameraController();
+                }
+                else
+                {
+                    ActivatePCControls();
+                }
 
+            }
         }
     }
 
@@ -127,5 +141,12 @@ public class GamepadChecker : MonoBehaviour
             Camera.GetComponent<CameraController>().enabled = false;
             Camera.GetComponent<CameraControllerConsole>().enabled = false;
             Camera.GetComponent<CameraControllerPs>().enabled = true;
+    }
+
+    public void DisableAllControls()
+    {
+        this.gameObject.GetComponent<PlayerController>().enabled = false;
+        this.gameObject.GetComponent<PlayerControllerXbox>().enabled = false;
+        this.gameObject.GetComponent<PlayerControllerPs4>().enabled = false;
     }
 }
