@@ -12,6 +12,9 @@ public class TestFlightController : MonoBehaviour
 	[Range(0, 1)]
 	public float airControlPercent;
 
+	private float flapCooldown = 0.05f;
+	private float flapCooldownCallable = 0.05f;
+
 	public float turnSmoothTime = 0.2f;
 	float turnSmoothVelocity;
 
@@ -58,7 +61,12 @@ public class TestFlightController : MonoBehaviour
         Lower();
 
         controller.Move(hoverGravity * Time.deltaTime);
-
+        
+        if (flapCooldownCallable > 0) // Work in Progress
+        {
+	        flapCooldownCallable -= Time.deltaTime; // Work in Progress
+        }
+        
         // animator
         //float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
         //animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
@@ -101,10 +109,17 @@ public class TestFlightController : MonoBehaviour
     {
         if(timer >= 0)
         {
-            if(Input.GetKey(KeyCode.Space))
+	        if(Input.GetKey(KeyCode.Space))
             {
                 // flap with wings anim.SetBool("Flapping", true)
-                controller.Move(upwardsAcceleration * Time.deltaTime);
+                if (flapCooldownCallable <= 0) // Work in Progress
+                {
+	                controller.Move(upwardsAcceleration * Time.deltaTime);
+
+	                flapCooldownCallable = flapCooldown; // Work in Progress
+
+                }
+
             }
 
         }
