@@ -6,9 +6,10 @@ using UnityEngine;
 public class GamepadChecker : MonoBehaviour
 {
     public GameObject Camera;
+    public GameObject minecartCamera;
     private int Xbox_One_Controller = 0;
     private int PS4_Controller = 0;
-    private bool inMineCart;
+    public bool inMineCart;
 
     private void Start()
     {
@@ -40,6 +41,8 @@ public class GamepadChecker : MonoBehaviour
         if (PlayerManager.instance.isInMineCart)
         {
             DisableAllControls();
+            Camera.SetActive(false);
+            minecartCamera.SetActive(true);
         }
         else
         {

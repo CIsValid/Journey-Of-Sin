@@ -29,7 +29,6 @@ public class CameraController : MonoBehaviour
 
 	void LateUpdate()
 	{
-
 		yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
 		pitch -= Input.GetAxis("Mouse Y") * mouseSensitivity;
 		pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
@@ -38,7 +37,7 @@ public class CameraController : MonoBehaviour
 		transform.eulerAngles = currentRotation;
 
 		transform.position = target.position - transform.forward * dstFromTarget;
-
+		
 	}
 
 }

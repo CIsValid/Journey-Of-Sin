@@ -8,6 +8,7 @@ namespace PathCreation.Examples
     public class PathFollower : MonoBehaviour
     {
         public PathCreator pathCreator;
+        public Camera mainCamera;
         public EndOfPathInstruction endOfPathInstruction;
         public float speed = 5;
         public float maxSpeed = 20;
@@ -17,15 +18,22 @@ namespace PathCreation.Examples
         private GameObject player;
 
         private bool isInRange;
-        private bool isRiding;
-        private bool completedRide;
+        public bool isRiding;
+        public bool completedRide;
         public GameObject target;
-        
+        private GamepadChecker gamepadChecker;
+        public GameObject camera;
+
         void Start() {
             if (pathCreator != null)
             {
                 // Subscribed to the pathUpdated event so that we're notified if the path changes during the game
                 pathCreator.pathUpdated += OnPathChanged;
+            }
+
+            if (!mainCamera)
+            {
+                mainCamera = Camera.main;
             }
         }
 
@@ -62,6 +70,7 @@ namespace PathCreation.Examples
                     PlayerManager.instance.isInMineCart = true;
                     player.transform.localPosition = target.transform.position;
                     player.transform.rotation = target.transform.rotation;
+                    mainCamera.transform.localPosition = player.transform.localPosition;
                 }
             }
         }
@@ -86,6 +95,16 @@ namespace PathCreation.Examples
                     if (!completedRide)
                     {
                         isInRange = true;
+                    }
+
+                    if (!gamepadChecker && player)
+                    {
+                        gamepadChecker = player.GetComponent<GamepadChecker>();
+                    }
+
+                    if (gamepadChecker && player)
+                    {
+                        gamepadChecker.minecartCamera = camera;
                     }
                 }
                 
