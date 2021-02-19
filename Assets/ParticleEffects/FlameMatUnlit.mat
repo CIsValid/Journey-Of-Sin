@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FlameMatUnlit
+  m_Shader: {fileID: -6465566751694194690, guid: c8a4489fc74187e4aa946512e89894cb, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_4760C4C6:
+        m_Texture: {fileID: 2800000, guid: 1890e07c92c46ca40a312003bb3d1c41, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_53FAE85D: 2
+    - Vector1_95BAACFE: 5
+    - Vector1_A3C571A5: 0.2
+    - Vector1_E90511DD: -0.28
+    m_Colors:
+    - Color_E066DCF5: {r: 2.1221771, g: 3.075965, b: 4.554335, a: 0}
+    - Vector2_4B3C1258: {r: -0.1, g: -0.5, b: 0, a: 0}
+    - Vector2_B643524: {r: 0, g: -0.3, b: 0, a: 0}
+  m_BuildTextureStacks: []
