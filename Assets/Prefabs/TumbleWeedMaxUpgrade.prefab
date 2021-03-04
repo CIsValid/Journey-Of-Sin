@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 492388969486157488}
   - component: {fileID: 492388969486157490}
   - component: {fileID: 492388969486157489}
-  - component: {fileID: 2024405557752473805}
   m_Layer: 0
   m_Name: pSphere1 (1)
   m_TagString: Untagged
@@ -82,21 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2024405557752473805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 492388969486157503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 166bbb0ebd63cd64585674e3efb09816, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explotionBuildUpVFX: {fileID: 0}
-  TumbleWeedExplotionVFX: {fileID: 0}
-  timerForExplotion: 0
 --- !u!1 &726268082889368791
 GameObject:
   m_ObjectHideFlags: 0
@@ -5056,7 +5040,6 @@ GameObject:
   - component: {fileID: 4063361177430422296}
   - component: {fileID: 8140283400444767508}
   - component: {fileID: 8827579326790408694}
-  - component: {fileID: 3132778908792198536}
   m_Layer: 0
   m_Name: pSphere1
   m_TagString: Untagged
@@ -5127,21 +5110,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3132778908792198536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2386090091645501067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 166bbb0ebd63cd64585674e3efb09816, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explotionBuildUpVFX: {fileID: 0}
-  TumbleWeedExplotionVFX: {fileID: 0}
-  timerForExplotion: 0
 --- !u!1 &3161940115357127096
 GameObject:
   m_ObjectHideFlags: 0
@@ -10081,7 +10049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2955918427035585033
 Transform:
   m_ObjectHideFlags: 0
@@ -10139,7 +10107,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6304903678477627521}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -15209,4 +15177,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explotionBuildUpVFX: {fileID: 4341649798162936353}
   TumbleWeedExplotionVFX: {fileID: 6304903678477627521}
-  timerForExplotion: 5
+  meshToDisable:
+  - {fileID: 7645263368215816247}
+  - {fileID: 2386090091645501067}
+  - {fileID: 492388969486157503}
+  timerForExplotion: 3
+  timerToDestroyObject: 2
+  destroyObject: 0
