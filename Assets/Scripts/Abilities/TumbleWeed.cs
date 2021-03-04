@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TumbleWeed : MonoBehaviour
 {
-    public float timeBeforeExplotion = 4;
+    /*public float timeBeforeExplotion = 4;
     public float timeBeforeDestruction = 2;
 
     private MeshRenderer meshRenderer;
@@ -48,5 +48,31 @@ public class TumbleWeed : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+    }*/
+
+    public GameObject explotionBuildUpVFX;
+    public GameObject TumbleWeedExplotionVFX;
+    public float timerForExplotion;
+
+    private void Start() {
+        
+    }
+
+    private void Update() {
+        if(timerForExplotion > 0)
+        {
+            timerForExplotion -= Time.deltaTime;
+        }
+        else{
+            // first we hide the build up Object
+            explotionBuildUpVFX.SetActive(false);
+            // Then we play Explotion Effect
+            TumbleWeedExplotionVFX.SetActive(true);
+        }        
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        explotionBuildUpVFX.SetActive(false);
+        TumbleWeedExplotionVFX.SetActive(true);
     }
 }
