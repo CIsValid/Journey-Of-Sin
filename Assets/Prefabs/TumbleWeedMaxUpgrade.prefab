@@ -10080,7 +10080,16 @@ VisualEffect:
   m_ResetSeedOnPlay: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 4
+        m_Name: Trail size
+        m_Overridden: 1
+      - m_Value: 3
+        m_Name: Trail Radius
+        m_Overridden: 1
+      - m_Value: 9
+        m_Name: GroundTextureSize
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
