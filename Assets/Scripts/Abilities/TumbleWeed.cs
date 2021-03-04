@@ -50,6 +50,7 @@ public class TumbleWeed : MonoBehaviour
             }
             else
             {
+                //Destroy(TumbleWeedExplotionVFX);
                 Destroy(this.gameObject);
             }   
         }
