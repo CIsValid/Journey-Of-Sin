@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TallGhostMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5dfc593a683342f46bec4798dbba5362, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_3AE9C28B: 1.23
+    - Vector1_D0D93B9F: 2.28
+    m_Colors:
+    - Color_B9A8FDF5: {r: 0.6680218, g: 1.3019608, b: 1.0155264, a: 0}
+    - Color_C2F1A373: {r: 0.8207547, g: 0.3445621, b: 0.42191315, a: 0}
+    - Vector3_2CD3207F: {r: -1.66, g: 2.07, b: 0.4, a: 0}
+  m_BuildTextureStacks: []
