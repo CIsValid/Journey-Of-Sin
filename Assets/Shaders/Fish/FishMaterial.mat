@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FishMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: eaf2e6994a8050248b554589efd1aeeb, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_2627CD7D:
+        m_Texture: {fileID: 2800000, guid: 856b984a3676076449c7dc13171eb5ff, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_43176CF6:
+        m_Texture: {fileID: 2800000, guid: 26381a2cc21f1b74f86bfa3c25cf7d98, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_7D072610:
+        m_Texture: {fileID: 2800000, guid: ec901042ee5b8e44580732da22bbb366, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_88C3208F:
+        m_Texture: {fileID: 2800000, guid: ec901042ee5b8e44580732da22bbb366, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_9389EEC6:
+        m_Texture: {fileID: 2800000, guid: 26381a2cc21f1b74f86bfa3c25cf7d98, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_4A3CE4E0: 0.5
+    - Vector1_510E7BDF: 0.5
+    - Vector1_776E8C58: 1.33
+    - Vector1_8B3D7B28: 1
+    - Vector1_AA6B2E32: 5
+    - Vector1_B44721FF: 1
+    - Vector1_B69A832B: 0.5
+    - Vector1_DEEDCCEB: 2
+    - Vector1_F08F3CCE: 1
+    m_Colors:
+    - Vector3_BFE46435: {r: 1, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
