@@ -16,9 +16,12 @@ public class TumbleWeed : MonoBehaviour
     public bool destroyObject;
 
     private Rigidbody rb;
+    private SphereCollider sc;
 
     private void Start() {
         rb = transform.GetComponent<Rigidbody>();
+        sc = transform.GetComponent<SphereCollider>();
+        sc.enabled = false;
     }
 
     private void Update() {
@@ -31,6 +34,7 @@ public class TumbleWeed : MonoBehaviour
             explotionBuildUpVFX.SetActive(false);
             // Then we play Explotion Effect
             TumbleWeedExplotionVFX.SetActive(true);
+            sc.enabled = true;
 
             foreach (var Objects in meshToDisable)
             {
@@ -50,8 +54,12 @@ public class TumbleWeed : MonoBehaviour
             }
             else
             {
-                //Destroy(TumbleWeedExplotionVFX);
                 Destroy(this.gameObject);
+            }
+
+            if (timerToDestroyObject < 1.5f)
+            {
+                sc.enabled = false;
             }   
         }
 
@@ -66,6 +74,7 @@ public class TumbleWeed : MonoBehaviour
                 {
                     Objects.SetActive(false);
                 }
+            Destroy(other.gameObject);
             destroyObject = true;
         }
     }

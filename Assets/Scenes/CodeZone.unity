@@ -759,7 +759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!136 &273028177
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4410,7 +4410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1130952574
 Transform:
   m_ObjectHideFlags: 0
@@ -8729,6 +8729,10 @@ PrefabInstance:
       propertyPath: tumbleWeedObj
       value: 
       objectReference: {fileID: 7936821356049766183, guid: d6320eda397e3a34988dba34dbcc7a1e, type: 3}
+    - target: {fileID: 1079955109233687365, guid: d0d184e9cabb1334f812533fce1ebc80, type: 3}
+      propertyPath: radius
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0d184e9cabb1334f812533fce1ebc80, type: 3}
 --- !u!1001 &1497751237262386543
