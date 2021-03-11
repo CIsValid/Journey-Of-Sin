@@ -6,6 +6,8 @@ public class AbilityManager : MonoBehaviour
 {
     public static AbilityManager instance;
 
+    private PlayerManager playerManager;
+
     [Header("Current Location of Player")]
     public string worldLocation;
 
@@ -22,11 +24,11 @@ public class AbilityManager : MonoBehaviour
 
     [Header("Jungle Ability Values")]
     public Material newMat;
+    private Material oldMat;
+    private Renderer rend;
     public float jungleAbilityCooldown;
     public float camuflageSpeed;
     public float camouflageCooldown;
-    private Renderer rend;
-    private Material oldMat;
     public bool isCamoflaged;
 
 
@@ -40,9 +42,11 @@ public class AbilityManager : MonoBehaviour
 
         mainCamera = Camera.main;
 
-        rend = transform.GetComponent<Renderer>();
+        rend = GetComponent<Renderer>();
 
-        oldMat = rend.GetComponent<Renderer>().material;
+        oldMat = rend.material;
+
+        playerManager = GetComponent<PlayerManager>();
     }
 
     // Update is called once per frame
@@ -89,6 +93,7 @@ public class AbilityManager : MonoBehaviour
         {
             camouflageCooldown -= Time.deltaTime;
         }
+
     }
 
     public void TumbleWeedAbility()
@@ -114,19 +119,21 @@ public class AbilityManager : MonoBehaviour
         {
             Debug.Log("Camoflaged :D");
 
-            rend.material.Lerp(oldMat, newMat, camuflageSpeed * Time.deltaTime);
+            rend.material = newMat;
 
-            //isCamoflaged = true;
-            //camouflageCooldown = jungleAbilityCooldown;
+            isCamoflaged = true;
+            playerManager.isCamoflaged = isCamoflaged;
+            camouflageCooldown = jungleAbilityCooldown;
         }
         if(Input.GetKey(KeyCode.F) && isCamoflaged && camouflageCooldown <= 0)
         {
             Debug.Log("Visable :D");
 
-            rend.material.Lerp(newMat, oldMat, camuflageSpeed * Time.deltaTime);
+            rend.material = oldMat;
 
             camouflageCooldown = jungleAbilityCooldown;
             isCamoflaged = false;
+            playerManager.isCamoflaged = isCamoflaged;
         }
     }
 }
