@@ -6410,8 +6410,7 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6440,7 +6439,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596470362}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 04cdc379c57236d489bdbff4274a69a0, type: 3}
+  m_Asset: {fileID: 0}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -8779,7 +8778,7 @@ PrefabInstance:
     - target: {fileID: 721766118094146779, guid: d0d184e9cabb1334f812533fce1ebc80, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6c59cadf49ca9344999674cc09baf029, type: 2}
+      objectReference: {fileID: 2100000, guid: 433e02d6e9455514aa7275ef305dd8bd, type: 2}
     - target: {fileID: 721766118614083683, guid: d0d184e9cabb1334f812533fce1ebc80, type: 3}
       propertyPath: gamepadOBJ
       value: 
