@@ -6,8 +6,8 @@ public class ObjectGlitchEffect : MonoBehaviour
 {
 
     private Renderer rend;
-    public float targetValue;
-    public float currentValue;
+    public float targetValue = 1f;
+    public float currentValue = 1.1f;
     private float randTimeVal;
     public float lerpSpeed;
 
@@ -44,7 +44,7 @@ public class ObjectGlitchEffect : MonoBehaviour
         
         if (!hasGlitched)
         {
-            currentValue = Random.Range(0.3f, 1f);
+            targetValue = Random.Range(0.3f, 1f);
             rend.material.SetFloat("_ChangePercent", currentValue);
             if (countDown > 0)
             {
@@ -52,6 +52,7 @@ public class ObjectGlitchEffect : MonoBehaviour
             }
             else
             {
+                targetValue = 1.1f;
                 currentValue = 1.1f;
                 rend.material.SetFloat("_ChangePercent", currentValue);
                 hasGlitched = true;
