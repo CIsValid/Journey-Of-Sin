@@ -6218,6 +6218,7 @@ GameObject:
   - component: {fileID: 1543856404}
   - component: {fileID: 1543856403}
   - component: {fileID: 1543856402}
+  - component: {fileID: 1543856406}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -6257,7 +6258,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7cc79fbbd1b76ae499007c078b11fa2c, type: 2}
+  - {fileID: 2100000, guid: b3033a4460c4ee44ba50901cd89590a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6295,12 +6296,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543856401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.62, y: -1.31, z: -0.39747143}
+  m_LocalPosition: {x: 4.77, y: -0.96, z: -0.39747143}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1543856406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543856401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6329419243caa409186ad92a4cd15a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetValue: 1
+  currentValue: 1.1
+  lerpSpeed: 0.01
+  countDown: 0
 --- !u!1 &1564807399
 GameObject:
   m_ObjectHideFlags: 0
@@ -8750,12 +8767,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 721766118094146779, guid: d0d184e9cabb1334f812533fce1ebc80, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 721766118094146779, guid: d0d184e9cabb1334f812533fce1ebc80, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 433e02d6e9455514aa7275ef305dd8bd, type: 2}
+      objectReference: {fileID: 2100000, guid: 6c59cadf49ca9344999674cc09baf029, type: 2}
     - target: {fileID: 721766118094146779, guid: d0d184e9cabb1334f812533fce1ebc80, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
