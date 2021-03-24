@@ -9,7 +9,7 @@ public class ObjectGlitchEffect : MonoBehaviour
     public float targetValue = 1f;
     public float currentValue = 1.1f;
     private float randTimeVal;
-    public float lerpSpeed;
+    public float lerpSpeed = 2f;
 
     public float countDown;
 
