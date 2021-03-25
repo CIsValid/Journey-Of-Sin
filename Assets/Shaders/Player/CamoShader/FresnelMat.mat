@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FresnelMat
-  m_Shader: {fileID: -6465566751694194690, guid: 0e82cb51c6d29ac439aead5f92021766, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 3f14db1f5a6ebf649837b902e3098155, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
