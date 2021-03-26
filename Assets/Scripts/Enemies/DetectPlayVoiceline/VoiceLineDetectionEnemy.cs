@@ -18,6 +18,8 @@ public class VoiceLineDetectionEnemy : MonoBehaviour
     [FormerlySerializedAs("rotSpeed")] public float returnSpeed;
 
     private Quaternion startRot;
+
+    public Boolean lookingAtPlayer;
     
     private void Start()
     {
@@ -32,10 +34,12 @@ public class VoiceLineDetectionEnemy : MonoBehaviour
             if (Vector3.Distance(target.transform.position, transform.position) <= viewDistance)
             {
                 transform.rotation = Quaternion.LookRotation(target.transform.position);
+                lookingAtPlayer = true;
             }
             else
             {
                 transform.rotation = Quaternion.Lerp(transform.rotation, startRot, returnSpeed * Time.deltaTime);
+                lookingAtPlayer = false;
             }
         }
     }
