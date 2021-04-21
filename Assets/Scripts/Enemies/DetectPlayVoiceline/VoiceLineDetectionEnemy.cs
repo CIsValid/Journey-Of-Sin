@@ -12,15 +12,21 @@ public class VoiceLineDetectionEnemy : MonoBehaviour
     private Boolean hasBeenDetected;
 
     private GameObject target;
+    private PlayerManager playerManager;
     
     public float viewDistance;
     
     [FormerlySerializedAs("rotSpeed")] public float returnSpeed;
 
     private Quaternion startRot;
+    public float distToPlayer;
+
+    public float attackDamage;
 
     public Boolean lookingAtPlayer;
     
+    public List<Collider> TriggerList = new List<Collider>();
+
     private void Start()
     {
         startRot = transform.rotation;
@@ -31,9 +37,11 @@ public class VoiceLineDetectionEnemy : MonoBehaviour
     {
         if (hasBeenDetected && target)
         {
-            if (Vector3.Distance(target.transform.position, transform.position) <= viewDistance)
+            distToPlayer = Vector3.Distance(target.transform.position, transform.position);
+            
+            if (distToPlayer <= viewDistance)
             {
-                transform.rotation = Quaternion.LookRotation(target.transform.position);
+                transform.LookAt(target.transform.position);
                 lookingAtPlayer = true;
             }
             else
@@ -42,19 +50,52 @@ public class VoiceLineDetectionEnemy : MonoBehaviour
                 lookingAtPlayer = false;
             }
         }
+
+        if (lookingAtPlayer && distToPlayer <= viewDistance && TriggerList.Count < 2)
+        {
+            playerManager.health -= attackDamage / 100;
+            Debug.Log("Attacking");
+        }
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
+
         if (other.CompareTag("Player"))
         {
             target = other.gameObject;
+            playerManager = other.gameObject.GetComponent<PlayerManager>();
             if (!hasBeenDetected)
             {
                 audioSource.Play();
                 hasBeenDetected = true;
             }
-
+        }
+        else
+        {
+            lookingAtPlayer = false;
+            target = null;
         }
     }
+
+    /*private void OnCollisionStay(Collision other)
+    {
+        //if the object is not already in the list
+        if(!TriggerList.Contains(other))
+        {
+            //add the object to the list
+            TriggerList.Add(other);
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        //if the object is in the list
+        if(TriggerList.Contains(other))
+        {
+            //remove it from the list
+            TriggerList.Remove(other);
+        }
+ 
+    }*/
 }

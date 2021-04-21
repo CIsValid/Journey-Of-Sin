@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AbilityManager))]
 public class UpdateLocationCollider : MonoBehaviour
 {
     public enum WorldOrigin
@@ -18,6 +17,7 @@ public class UpdateLocationCollider : MonoBehaviour
 
     public WorldOrigin worldOriginChange;
     private AbilityManager abilityManager;
+    private PlayerManager playerManager;
     private GameObject target;
     
     private void OnTriggerStay(Collider other)
@@ -32,11 +32,13 @@ public class UpdateLocationCollider : MonoBehaviour
             if (!abilityManager && target)
             {
                 abilityManager = target.GetComponent<AbilityManager>();
+                playerManager = target.GetComponent<PlayerManager>();
             }
 
             if (abilityManager && target)
             {
                 abilityManager.worldLocation = worldOriginChange.ToString();
+                playerManager.worldLocation = worldOriginChange.ToString();
             }
         }
     }

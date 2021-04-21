@@ -76,7 +76,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"89024b80-ff3c-4e89-b4df-154e4eeb9298\"\n    },\n    \"m_Name\": \"GlitchChangePercent\",\n    \"m_DefaultReferenceName\": \"Vector1_D19342D9\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": 0.0,\n    \"m_FloatType\": 1,\n    \"m_RangeValues\": {\n        \"x\": 0.0,\n        \"y\": 1.100000023841858\n    }\n}"
+            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"89024b80-ff3c-4e89-b4df-154e4eeb9298\"\n    },\n    \"m_Name\": \"GlitchChangePercent\",\n    \"m_DefaultReferenceName\": \"Vector1_D19342D9\",\n    \"m_OverrideReferenceName\": \"GlitchChangePerc\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": 0.0,\n    \"m_FloatType\": 1,\n    \"m_RangeValues\": {\n        \"x\": 0.0,\n        \"y\": 1.100000023841858\n    }\n}"
         },
         {
             "typeInfo": {

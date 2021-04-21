@@ -57,6 +57,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Boolean_B061379F: 0
+    - GlitchChangePerc: 1.1
     - Vector1_426F7C9: 0.203
     - Vector1_5247123F: 0
     - Vector1_535E6202: 0.02
