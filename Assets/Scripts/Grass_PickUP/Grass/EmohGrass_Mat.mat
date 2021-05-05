@@ -34,5 +34,5 @@ Material:
     - Color_56E34F3A: {r: 0.851668, g: 1, b: 0, a: 0}
     - Color_B15A932B: {r: 0.13928968, g: 0.4811321, b: 0.002269496, a: 0}
     - Vector2_D17F24EC: {r: 1, g: 1, b: 0, a: 0}
-    - _pos: {r: 150.3, g: 29.953, b: 108.78, a: 0}
+    - _pos: {r: 148.56, g: 29.953, b: 113.82, a: 0}
   m_BuildTextureStacks: []
