@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9037530054131515593
+--- !u!114 &-548275026699478600
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Lights
+  m_Name: LanEmitBright
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION _METALLICSPECGLOSSMAP _NORMALMAP
   m_LightmapFlags: 2
@@ -34,23 +34,23 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: c3a484d10a4f4034aa11b72c598fa1f7, type: 3}
+        m_Texture: {fileID: 2800000, guid: c2ac26fc7b68037429a2fdd1cef940bc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 978f50948b4fa4f449531afc18478871, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3e31c918341d4ea44a6d831242a9cd9d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: e5bd64379ea032a4c8cb79fe697bea21, type: 3}
+        m_Texture: {fileID: 2800000, guid: da45b4dfa133c4e4d843bef8a5748042, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c3a484d10a4f4034aa11b72c598fa1f7, type: 3}
+        m_Texture: {fileID: 2800000, guid: c2ac26fc7b68037429a2fdd1cef940bc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 5850fc235c785d8499e96f2b4350d609, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0a20f05ba323d4c48a7821cc3bc07829, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -86,6 +86,6 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 3.4415908, g: 3.4415908, b: 3.4415908, a: 1}
+    - _EmissionColor: {r: 1.1353015, g: 1.1353015, b: 1.1353015, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []

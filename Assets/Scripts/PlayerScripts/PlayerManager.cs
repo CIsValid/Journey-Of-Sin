@@ -14,6 +14,9 @@ public class PlayerManager : MonoBehaviour
     private float m_health = 5;
     public delegate void OnHealthChangeDelegate(float newHealth);
     public event OnHealthChangeDelegate OnHealthChange;
+    
+    public int collectedFlames;
+    public int collectedfFlowers; 
 
     public bool isJumping;
     public bool isFlying;
